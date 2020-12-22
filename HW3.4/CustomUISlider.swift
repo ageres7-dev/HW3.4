@@ -11,7 +11,6 @@ struct CustomUISlider: UIViewRepresentable {
     @Binding var value: Double
     let color: UIColor
 
-    
     func makeUIView(context: Context) -> UISlider {
         let slider = UISlider(frame: .zero)
         slider.minimumValue = 0
@@ -21,7 +20,6 @@ struct CustomUISlider: UIViewRepresentable {
             action: #selector(Coordinator.valueChanged),
             for: .valueChanged
         )
-        
         return slider
     }
     
@@ -33,7 +31,6 @@ struct CustomUISlider: UIViewRepresentable {
     func makeCoordinator() -> CustomUISlider.Coordinator {
         Coordinator(value: $value)
     }
-    
 }
 
 extension CustomUISlider {
@@ -46,13 +43,9 @@ extension CustomUISlider {
         
         @objc func valueChanged(_ sender: UISlider) {
             value = Double(sender.value)
-
         }
     }
 }
-
-
-
 
 struct CustomUISlider_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,32 +7,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct SuperGameView: View {
     @State private var currentValue = Double.random(in: 0...100)
     @State private var showAlert = false
-//    private let minimumValue = 0
-//    private let maximumValue = 100
     @State private var targetValue = Int.random(in: 0...100)
-    
-//    private var delta: Double {
-//        Double(maximumValue - minimumValue)
-//    }
-    
-//    private func tryAgain() -> Void {
-//        targetValue = Int.random(in: 0...100)
-//    }
-    
-    
     
     var body: some View {
         VStack{
-            
-//            Circle()
-//                .foregroundColor(Color(color))
-//                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
             Text("Подвинь слайдер, как можно ближе к: \(targetValue)")
-            
             
             HStack {
                 Text("\(0)")
@@ -53,20 +36,14 @@ struct ContentView: View {
                 Text("Начать заново")
             }.padding()
         }
-//        .padding()
-        
     }
 }
 
-extension ContentView {
-    
-    
-    
+extension SuperGameView {
     private var color: UIColor {
         let alpha = CGFloat(1 - abs(Double(targetValue) - currentValue) / 100)
         return UIColor(red: 1, green: 0, blue: 0, alpha: alpha)
     }
-    
     
     private func computeScore() -> Int {
         let difference = abs(targetValue - lround(currentValue))
@@ -74,12 +51,9 @@ extension ContentView {
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SuperGameView()
         
     }
 }
-
-

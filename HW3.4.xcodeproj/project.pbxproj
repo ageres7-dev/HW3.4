@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A580F6A825911CA70043CC08 /* HW3_4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F6A725911CA70043CC08 /* HW3_4App.swift */; };
-		A580F6AA25911CA70043CC08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F6A925911CA70043CC08 /* ContentView.swift */; };
+		A580F6AA25911CA70043CC08 /* SuperGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F6A925911CA70043CC08 /* SuperGameView.swift */; };
 		A580F6AC25911CA90043CC08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A580F6AB25911CA90043CC08 /* Assets.xcassets */; };
 		A580F6AF25911CA90043CC08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A580F6AE25911CA90043CC08 /* Preview Assets.xcassets */; };
 		A580F6BB25911E5E0043CC08 /* CustomUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A580F6BA25911E5E0043CC08 /* CustomUISlider.swift */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		A580F6A425911CA70043CC08 /* HW3.4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW3.4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A580F6A725911CA70043CC08 /* HW3_4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HW3_4App.swift; sourceTree = "<group>"; };
-		A580F6A925911CA70043CC08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A580F6A925911CA70043CC08 /* SuperGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperGameView.swift; sourceTree = "<group>"; };
 		A580F6AB25911CA90043CC08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A580F6AE25911CA90043CC08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A580F6B025911CA90043CC08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				A580F6A725911CA70043CC08 /* HW3_4App.swift */,
-				A580F6A925911CA70043CC08 /* ContentView.swift */,
+				A580F6A925911CA70043CC08 /* SuperGameView.swift */,
 				A580F6AB25911CA90043CC08 /* Assets.xcassets */,
 				A580F6B025911CA90043CC08 /* Info.plist */,
 				A580F6AD25911CA90043CC08 /* Preview Content */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A580F6AA25911CA70043CC08 /* ContentView.swift in Sources */,
+				A580F6AA25911CA70043CC08 /* SuperGameView.swift in Sources */,
 				A580F6A825911CA70043CC08 /* HW3_4App.swift in Sources */,
 				A580F6BB25911E5E0043CC08 /* CustomUISlider.swift in Sources */,
 			);
