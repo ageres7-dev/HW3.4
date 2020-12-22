@@ -8,39 +8,66 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var currentValue = 1.0
-    private let targetValue = Int.random(in: 0...100)
+    @State private var currentValue = Double.random(in: 0...100)
+    @State private var showAlert = false
+//    private let minimumValue = 0
+//    private let maximumValue = 100
+    @State private var targetValue = Int.random(in: 0...100)
     
-    private var color: UIColor {
-        let alpha = CGFloat(1 - abs(Double(targetValue) - currentValue) / 100)
-//        print(alpha)
-       return UIColor(red: 1, green: 0, blue: 0, alpha: alpha)
-        
+//    private var delta: Double {
+//        Double(maximumValue - minimumValue)
+//    }
     
-    }
+//    private func tryAgain() -> Void {
+//        targetValue = Int.random(in: 0...100)
+//    }
+    
+    
     
     var body: some View {
         VStack{
             
-            Circle()
-                .foregroundColor(Color(color))
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//            Circle()
+//                .foregroundColor(Color(color))
+//                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
 
             Text("Подвинь слайдер, как можно ближе к: \(targetValue)")
             
             
             HStack {
-                Text("0")
-                CustomUISlider(value: $currentValue, color: color)
-                Text("100")
+                Text("\(0)")
+                CustomUISlider(value: $currentValue,
+                               color: color)
+                Text("\(100)")
+            }.padding()
+            
+            Button(action: { showAlert = true }) {
+                Text("Проверь меня!")
             }
+            .alert(isPresented: $showAlert) {
+                UINotificationFeedbackGenerator().notificationOccurred(.success)
+                return Alert(title: Text("Your score"), message: Text("\(computeScore())"))
+            }.padding()
+            
+            Button(action: { targetValue = Int.random(in: 0...100) }) {
+                Text("Начать заново")
+            }.padding()
         }
-        .padding()
+//        .padding()
         
     }
 }
 
 extension ContentView {
+    
+    
+    
+    private var color: UIColor {
+        let alpha = CGFloat(1 - abs(Double(targetValue) - currentValue) / 100)
+        return UIColor(red: 1, green: 0, blue: 0, alpha: alpha)
+    }
+    
+    
     private func computeScore() -> Int {
         let difference = abs(targetValue - lround(currentValue))
         return 100 - difference
